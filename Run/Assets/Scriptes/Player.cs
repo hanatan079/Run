@@ -13,11 +13,12 @@ public class Player : MonoBehaviour
     private Rigidbody2D rd;
 
     //ジャンプ判定
-    private Transform landingPos;
+    private Transform landPos;
 
     //地面レイヤー
     [SerializeField]
     private LayerMask groundLayer;
+
 
 
     private void Awake()
@@ -26,9 +27,8 @@ public class Player : MonoBehaviour
         rd = GetComponent<Rigidbody2D>();
 
         //子オブジェクトにしたLandingを取得
-        landingPos = transform.GetChild(0).transform;
+        landPos = transform.GetChild(0).transform;
     }
-
 
     void Start()
     {
@@ -45,9 +45,27 @@ public class Player : MonoBehaviour
         MovePlayer();
     }
 
+
+
     //プレイヤーの移動速度(velocity=rigidbodyの速度ベクトル)
     private void MovePlayer()
     {
         rd.velocity = new Vector2(moveSpeed, rd.velocity.y);
+    }
+
+    //ジャンプする関数
+    private void JumpPlayer()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+
+        }
+    }
+
+    //地面に着陸しているか
+    private bool Landing()
+    {
+        //landPosを中心に半径0.1fの円が作られる
+        return Physics2D.OverlapCircle(landPos.position, 0.1f, groundLayer);
     }
 }
