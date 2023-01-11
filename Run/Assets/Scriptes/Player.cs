@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
     //移動スピード、ジャンプ力
     [SerializeField]
-    private float moveSpeed = 7f, jumpSpeed = 5f;
+    private float moveSpeed = 7f, jumpPower = 5f;
 
     //rigidBody格納
     private Rigidbody2D rd;
@@ -58,7 +58,11 @@ public class Player : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-
+            if(Landing())
+            {
+                //力を加える
+                rd.AddForce(new Vector2(0f, jumpPower),ForceMode2D.Impulse);
+            }
         }
     }
 
