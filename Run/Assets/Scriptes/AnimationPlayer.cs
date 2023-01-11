@@ -6,17 +6,24 @@ public class AnimationPlayer : MonoBehaviour
 {
 
     //アニメーター
-    private void animator;
-    
-    // Start is called before the first frame update
-    void Start()
+    private Animator animator;
+
+
+
+    private void Awake()
     {
-        
+        //アニメーターの取得
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    //アニメーション設定用
+    public void JumpAnimation(float jumpY)
     {
-        
+        animator.SetFloat("Jump", jumpY);
+    }
+
+    public void RunAnimation(bool running)
+    {
+        animator.SetBool("Run", running);
     }
 }
