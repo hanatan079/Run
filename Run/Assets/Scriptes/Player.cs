@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     private LayerMask groundLayer;
 
     //アニメーション用
-    private PlayerAnimations playerAnimations;
+    private AnimationPlayer animationPlayer;
 
 
 
@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
 
         //子オブジェクトにしたLandingを取得
         landPos = transform.GetChild(0).transform;
+
+        //AnimationPlayer
+        animationPlayer = GetComponent<AnimationPlayer>();
     }
 
     void Start()
