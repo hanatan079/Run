@@ -9,6 +9,11 @@ public class BackGround : MonoBehaviour
     [SerializeField]
     private void groundPrefab;
 
+    //地面を呼び出す時に用意されている数
+    [SerializeField]
+    private float groundSpawn = 10
+
+
     // Start is called before the first frame update
     void Start()
     {
