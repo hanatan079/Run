@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private LayerMask groundLayer;
 
+    //アニメーション用
+    private PlayerAnimations playerAnimations;
+
 
 
     private void Awake()
