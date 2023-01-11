@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class BackGround : MonoBehaviour
 {
+
+    //地面格納用
+    [SerializeField]
+    private void groundPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
