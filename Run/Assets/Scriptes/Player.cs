@@ -12,7 +12,10 @@ public class Player : MonoBehaviour
     //rigidBody格納
     private Rigidbody2D rd;
 
-    
+    private Awake()
+    {
+        rd = GetComponent<Rigidbody2D>();
+    }
     private float 
     // Start is called before the first frame update
     void Start()
