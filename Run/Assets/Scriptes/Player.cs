@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         JumpPlayer();
+        AnimatePlayer();
     }
 
     void FixedUpdate()
