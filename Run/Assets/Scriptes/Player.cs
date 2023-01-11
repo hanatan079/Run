@@ -78,4 +78,11 @@ public class Player : MonoBehaviour
         //landPosを中心に半径0.1fの円が作られる
         return Physics2D.OverlapCircle(landPos.position, 0.1f, groundLayer);
     }
+
+    //ジャンプ、アニメーションを管理
+    private void AnimatePlayer()
+    {
+        animationPlayer.JumpAnimation(rd.velocity.y);
+        animationPlayer.RunAnimation(Landing());
+    }
 }
