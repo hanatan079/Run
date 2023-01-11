@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        Player();
     }
 
     //プレイヤーの移動速度(velocity=rigidbodyの速度ベクトル)
