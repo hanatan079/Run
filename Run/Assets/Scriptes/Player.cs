@@ -22,7 +22,11 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        //rigidbodyの位置を格納(プレイヤーの位置)
         rd = GetComponent<Rigidbody2D>();
+
+        //子オブジェクトにしたLandingを取得
+        landingPos = transform.GetChild(0).transform;
     }
 
 
