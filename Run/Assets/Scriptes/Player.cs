@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rd;
 
 
-    private Awake()
+    private void Awake()
     {
         rd = GetComponent<Rigidbody2D>();
     }
@@ -31,12 +31,12 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        Player();
+        MovePlayer();
     }
 
     //プレイヤーの移動速度(velocity=rigidbodyの速度ベクトル)
-    private void Player()
+    private void MovePlayer()
     {
-        rd.velocity = new Vector2(moveSpeed, rd.velocity.y)
+        rd.velocity = new Vector2(moveSpeed, rd.velocity.y);
     }
 }
