@@ -12,6 +12,13 @@ public class Player : MonoBehaviour
     //rigidBody格納
     private Rigidbody2D rd;
 
+    //ジャンプ判定
+    private Transform landingPos;
+
+    //地面レイヤー
+    [SerializeField]
+    private LayerMask groundLayer;
+
 
     private void Awake()
     {
