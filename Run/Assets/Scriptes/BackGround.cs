@@ -13,6 +13,9 @@ public class BackGround : MonoBehaviour
     [SerializeField]
     private float groundSpawn = 10
 
+    //生成したオブジェクトを管理
+    private List<GameObject> groundPool = new List<GameObject>();
+
 
     // Start is called before the first frame update
     void Start()
