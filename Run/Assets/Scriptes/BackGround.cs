@@ -27,6 +27,11 @@ public class BackGround : MonoBehaviour
     //表示するポジション格納用
     private float groundDisplay;
 
+    //秒数ごとの表示を管理する用
+    [SerializeField]
+    private float groundWaitTime = 10f;
+
+
 
 
     // Start is called before the first frame update
