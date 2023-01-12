@@ -48,4 +48,36 @@ public class BackGround : MonoBehaviour
     {
         
     }
+
+
+    //グラウンドオブジェクトの生成
+    void GroundGenerate()
+    {
+        //地面生成位置を格納用(0,0,0)
+        Vector3 newGroundPos = Vector3.zero;
+
+        //生成された床格納用
+        GameObject newGround;
+
+        //初期に用意されている数分繰り返す
+        for(int i = 0; i < groundSpawn; i++)
+        {
+            //生成するポジションを格納
+            newGroundPos = new Vector3(groundDisplay, groundPos, 0f);
+
+            //新しい場所へインスタンス(地面)を生成
+            newGround = Instantiate(groundPrefab, newGroundPos, Quaternion.identity);
+
+            //親オブジェクトを変更する
+            newGround.transform.SetParent(transform);
+
+            //新たに生成した床をリストへ追加
+            groundPool.Add(newGround);
+
+            //次に生成するポジションの更新
+            groundDisplay += groundPos;
+            
+        }
+
+    }
 }
