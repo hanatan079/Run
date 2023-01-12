@@ -29,7 +29,10 @@ public class BackGround : MonoBehaviour
 
     //秒数ごとの表示を管理する用
     [SerializeField]
-    private float groundWaitTime = 10f;
+    private float DisplayManagement = 10f;
+
+    //待ち時間
+    private float groundWaitTime;
 
 
 
