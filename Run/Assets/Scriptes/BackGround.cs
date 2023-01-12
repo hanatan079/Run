@@ -23,7 +23,11 @@ public class BackGround : MonoBehaviour
     //生成する幅の調整用
     [SerializeField]
     private float groundWidth = 18f;
-    
+
+    //表示するポジション格納用
+    private float groundDisplay;
+
+
 
     // Start is called before the first frame update
     void Start()
