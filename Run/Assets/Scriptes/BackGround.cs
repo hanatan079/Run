@@ -41,6 +41,10 @@ public class BackGround : MonoBehaviour
     void Start()
     {
         GroundGenerate();
+
+        //プレイ時間＋待ち時間、DisplayManagementの秒数が経過したら新しいオブジェクトが表示
+        groundWaitTime = Time.time + DisplayManagement;
+
     }
 
     // Update is called once per frame
@@ -76,8 +80,47 @@ public class BackGround : MonoBehaviour
 
             //次に生成するポジションの更新
             groundDisplay += groundPos;
-            
         }
-
     }
+
+    //次に生成するまでの時間設定
+    void  NextGround()
+    {
+        if(Time.time > groundWaitTime)
+        {
+            //地面オブジェクトを再利用(再表示)する呼ぶ
+
+            //プレイ時間＋待ち時間、DisplayManagementの秒数が経過したら新しいオブジェクトが表示
+            groundWaitTime = Time.time + DisplayManagement;
+        }
+    }
+
+    //地面オブジェクトを再利用(再表示)する
+    void RedisplayGround()
+    {
+        //生成するべきポジションを格納する変数作成
+        Vector3 newGroundPos = Vector3.zero;
+
+        //リストの中の非表示の床を設定するべきポジションへ表示する
+        foreach (GameObject obj in groundPool)
+        {
+            //オブジェクトが非表示なら
+            if(!obj.activeInHierarchy)
+            {
+                //表示するべき場所へ表示する
+                newGroundPos = new Vector3(groundDisplay, groundPos, 0f);
+
+                //リストが次に表示されるべき場所へ移動する
+                obj.transform.position = newGroundPos;
+
+                //表示する
+                obj.SetActive(true);
+
+                //次に生成するポジションの更新
+                groundDisplay += groundWidth;
+            }
+        }
+    }
+
+
 }
