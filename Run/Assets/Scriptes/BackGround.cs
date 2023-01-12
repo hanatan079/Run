@@ -50,7 +50,7 @@ public class BackGround : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        NextGround();
     }
 
 
