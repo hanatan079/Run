@@ -88,7 +88,7 @@ public class BackGround : MonoBehaviour
     {
         if(Time.time > groundWaitTime)
         {
-            //地面オブジェクトを再利用(再表示)する呼ぶ
+            RedisplayGround();
 
             //プレイ時間＋待ち時間、DisplayManagementの秒数が経過したら新しいオブジェクトが表示
             groundWaitTime = Time.time + DisplayManagement;
