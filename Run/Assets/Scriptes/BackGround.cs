@@ -40,7 +40,7 @@ public class BackGround : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GroundGenerate();
     }
 
     // Update is called once per frame
