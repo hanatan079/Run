@@ -13,11 +13,11 @@ public class Player : MonoBehaviour
     private Rigidbody2D rd;
 
     //ジャンプ判定
-    private Transform landPos;
+    private Transform floorContactPos;
 
     //地面レイヤー
     [SerializeField]
-    private LayerMask groundLayer;
+    private LayerMask floorLayer;
 
     //アニメーション用
     private AnimationPlayer animationPlayer;
@@ -29,8 +29,8 @@ public class Player : MonoBehaviour
         //rigidbodyの位置を格納(プレイヤーの位置)
         rd = GetComponent<Rigidbody2D>();
 
-        //子オブジェクトにしたLandingを取得
-        landPos = transform.GetChild(0).transform;
+        //子オブジェクトにしたFloorContactを取得
+        floorContactPos = transform.GetChild(0).transform;
 
         //AnimationPlayer
         animationPlayer = GetComponent<AnimationPlayer>();
@@ -76,8 +76,8 @@ public class Player : MonoBehaviour
     //地面に着陸しているか
     private bool Landing()
     {
-        //landPosを中心に半径0.1fの円が作られる
-        return Physics2D.OverlapCircle(landPos.position, 0.1f, groundLayer);
+        //floorContactPosを中心に半径0.1fの円が作られる
+        return Physics2D.OverlapCircle(floorContactPos.position, 0.1f, floorLayer);
     }
 
     //ジャンプ、アニメーションを管理

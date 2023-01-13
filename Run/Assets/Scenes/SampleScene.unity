@@ -484,6 +484,55 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1617296163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1617296165}
+  - component: {fileID: 1617296164}
+  m_Layer: 0
+  m_Name: BackGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1617296164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617296163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d58c6b8dbbb84bc3bd59089668830e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorPrefab: {fileID: 0}
+  floorSpawn: 10
+  floorPos: 0
+  floorWidth: 18
+  DisplayManagement: 10
+--- !u!4 &1617296165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617296163}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1972833937
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +548,7 @@ GameObject:
   - component: {fileID: 1972833940}
   - component: {fileID: 1972833939}
   - component: {fileID: 1972833944}
+  - component: {fileID: 1972833946}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -669,11 +719,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2298f8595ff8d42ce800b0229d544bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 8
   jumpPower: 5
-  groundLayer:
+  floorLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1972833946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972833937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa72df3051ea45728972b6ed87b3fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2086135770
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2086135771}
   m_Layer: 0
-  m_Name: ' Land'
+  m_Name: FloorContact
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -758,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7744296223628159448, guid: ed772e04fb6e04abba1bc5f14b41c5e5, type: 3}
       propertyPath: m_Name
-      value: Ground
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 7744296223628159448, guid: ed772e04fb6e04abba1bc5f14b41c5e5, type: 3}
       propertyPath: m_Layer

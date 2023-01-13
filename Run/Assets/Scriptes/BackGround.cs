@@ -7,32 +7,32 @@ public class BackGround : MonoBehaviour
 
     //地面格納用
     [SerializeField]
-    private GameObject groundPrefab;
+    private GameObject floorPrefab;
 
     //地面を呼び出す時に用意されている数
     [SerializeField]
-    private float groundSpawn = 10;
+    private float floorSpawn = 10;
 
     //生成したオブジェクトを管理
-    private List<GameObject> groundPool = new List<GameObject>();
+    private List<GameObject> floorPool = new List<GameObject>();
 
     //生成する位置の調整用
     [SerializeField]
-    private float groundPos = 0f;
+    private float floorPos = 0f;
 
     //生成する幅の調整用
     [SerializeField]
-    private float groundWidth = 18f;
+    private float floorWidth = 18f;
 
     //表示するポジション格納用
-    private float groundDisplay;
+    private float floorDisplay;
 
     //秒数ごとの表示を管理する用
     [SerializeField]
     private float DisplayManagement = 10f;
 
     //待ち時間
-    private float groundWaitTime;
+    private float floorWaitTime;
 
 
 
@@ -40,10 +40,10 @@ public class BackGround : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GroundGenerate();
+        FloorGenerate();
 
         //プレイ時間＋待ち時間、DisplayManagementの秒数が経過したら新しいオブジェクトが表示
-        groundWaitTime = Time.time + DisplayManagement;
+        floorWaitTime = Time.time + DisplayManagement;
 
     }
 
@@ -54,44 +54,44 @@ public class BackGround : MonoBehaviour
     }
 
 
-    //グラウンドオブジェクトの生成
-    void GroundGenerate()
+    //床オブジェクトの生成
+    void FloorGenerate()
     {
         //地面生成位置を格納用(0,0,0)
-        Vector3 newGroundPos = Vector3.zero;
+        Vector3 newFloorPos = Vector3.zero;
 
         //生成された床格納用
-        GameObject newGround;
+        GameObject newFloor;
 
         //初期に用意されている数分繰り返す
-        for(int i = 0; i < groundSpawn; i++)
+        for(int i = 0; i < floorSpawn; i++)
         {
             //生成するポジションを格納
-            newGroundPos = new Vector3(groundDisplay, groundPos, 0f);
+            newFloorPos = new Vector3(floorDisplay, floorPos, 0f);
 
             //新しい場所へインスタンス(地面)を生成
-            newGround = Instantiate(groundPrefab, newGroundPos, Quaternion.identity);
+            newFloor = Instantiate(floorPrefab, newFloorPos, Quaternion.identity);
 
             //親オブジェクトを変更する
-            newGround.transform.SetParent(transform);
+            newFloor.transform.SetParent(transform);
 
             //新たに生成した床をリストへ追加
-            groundPool.Add(newGround);
+            floorPool.Add(newFloor);
 
             //次に生成するポジションの更新
-            groundDisplay += groundPos;
+            floorDisplay += floorWidth;
         }
     }
 
     //次に生成するまでの時間設定
     void  NextGround()
     {
-        if(Time.time > groundWaitTime)
+        if(Time.time > floorWaitTime)
         {
             RedisplayGround();
 
             //プレイ時間＋待ち時間、DisplayManagementの秒数が経過したら新しいオブジェクトが表示
-            groundWaitTime = Time.time + DisplayManagement;
+            floorWaitTime = Time.time + DisplayManagement;
         }
     }
 
@@ -99,25 +99,25 @@ public class BackGround : MonoBehaviour
     void RedisplayGround()
     {
         //生成するべきポジションを格納する変数作成
-        Vector3 newGroundPos = Vector3.zero;
+        Vector3 newFloorPos = Vector3.zero;
 
         //リストの中の非表示の床を設定するべきポジションへ表示する
-        foreach (GameObject obj in groundPool)
+        foreach (GameObject obj in floorPool)
         {
             //オブジェクトが非表示なら
             if(!obj.activeInHierarchy)
             {
                 //表示するべき場所へ表示する
-                newGroundPos = new Vector3(groundDisplay, groundPos, 0f);
+                newFloorPos = new Vector3(floorDisplay, floorPos, 0f);
 
                 //リストが次に表示されるべき場所へ移動する
-                obj.transform.position = newGroundPos;
+                obj.transform.position = newFloorPos;
 
                 //表示する
                 obj.SetActive(true);
 
                 //次に生成するポジションの更新
-                groundDisplay += groundWidth;
+                floorDisplay += floorWidth;
             }
         }
     }
