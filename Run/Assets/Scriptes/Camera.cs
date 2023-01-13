@@ -12,6 +12,11 @@ public class Camera : MonoBehaviour
     [SerializeField]
     private float playerDistance = -5f;
 
+    //カメラ移動ポジ
+    [SerializeField]
+    private Vector3 cameraPos;
+
+
 
     // Start is called before the first frame update
     void Start()
