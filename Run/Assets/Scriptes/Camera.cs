@@ -18,15 +18,9 @@ public class Camera : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
-    void Start()
+    //プレイヤーを探す
+    private void FindPlayer()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        playerPos = GameObject.FindWithTag("Player").transform;
     }
 }
