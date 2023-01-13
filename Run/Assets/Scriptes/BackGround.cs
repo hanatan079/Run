@@ -57,7 +57,7 @@ public class BackGround : MonoBehaviour
     //床オブジェクトの生成
     void FloorGenerate()
     {
-        //地面生成位置を格納用(0,0,0)
+        //床生成位置を格納用(0,0,0)
         Vector3 newFloorPos = Vector3.zero;
 
         //生成された床格納用
@@ -67,7 +67,7 @@ public class BackGround : MonoBehaviour
         for(int i = 0; i < floorSpawn; i++)
         {
             //生成するポジションを格納
-            newFloorPos = new Vector3(floorDisplay, floorPos, 0f);
+            newFloorPos = new Vector3(floorDisplay, -4.7f, 0f);
 
             //新しい場所へインスタンス(地面)を生成
             newFloor = Instantiate(floorPrefab, newFloorPos, Quaternion.identity);

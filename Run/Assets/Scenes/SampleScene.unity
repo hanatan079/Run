@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 1617296165}
   - component: {fileID: 1617296164}
   m_Layer: 0
-  m_Name: BackGround
+  m_Name: ' FloorGeneration'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -513,10 +513,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d58c6b8dbbb84bc3bd59089668830e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorPrefab: {fileID: 0}
-  floorSpawn: 10
+  floorPrefab: {fileID: 7744296223628159448, guid: ed772e04fb6e04abba1bc5f14b41c5e5, type: 3}
+  floorSpawn: 5
   floorPos: 0
-  floorWidth: 18
+  floorWidth: 17.5
   DisplayManagement: 10
 --- !u!4 &1617296165
 Transform:
@@ -679,7 +679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972833937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: -3.19, z: 0}
+  m_LocalPosition: {x: -8, y: -3.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -784,7 +784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7744296223628159398, guid: ed772e04fb6e04abba1bc5f14b41c5e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.6392
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: 7744296223628159398, guid: ed772e04fb6e04abba1bc5f14b41c5e5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -827,5 +827,5 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 3924815963169458891, guid: ed772e04fb6e04abba1bc5f14b41c5e5, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: ed772e04fb6e04abba1bc5f14b41c5e5, type: 3}
