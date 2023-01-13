@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
+
+    //プレイヤーの位置格納用
+    private Transform playerPos;
+
+    
     // Start is called before the first frame update
     void Start()
     {
