@@ -8,7 +8,11 @@ public class Camera : MonoBehaviour
     //プレイヤーの位置格納用
     private Transform playerPos;
 
-    
+    //プレイヤーとの距離
+    [SerializeField]
+    private float playerDistance = -5f;
+
+
     // Start is called before the first frame update
     void Start()
     {
