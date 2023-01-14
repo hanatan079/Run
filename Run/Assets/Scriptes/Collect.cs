@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //床へぶつかったら非表示にする
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.CompareTag("Floor"))
+        {
+            collision.gameObject.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
