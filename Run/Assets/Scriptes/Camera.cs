@@ -23,4 +23,16 @@ public class Camera : MonoBehaviour
     {
         playerPos = GameObject.FindWithTag("Player").transform;
     }
+
+    //追跡する
+    private void TrackingPlayer()
+    {
+        if(playerPos)
+        {
+            cameraPos = transform.position;
+            cameraPos.x = playerPos.position.x - playerDistance;
+
+            transform.position = cameraPos;
+        }
+    }
 }
