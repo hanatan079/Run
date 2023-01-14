@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 1972833939}
   - component: {fileID: 1972833944}
   - component: {fileID: 1972833946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -745,7 +745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2086135771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorContact
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
