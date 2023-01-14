@@ -18,6 +18,13 @@ public class Camera : MonoBehaviour
 
 
 
+    private void Awake()
+    {
+        FindPlayer();
+    } 
+
+
+
     //プレイヤーを探す
     private void FindPlayer()
     {
