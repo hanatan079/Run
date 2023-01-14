@@ -23,6 +23,11 @@ public class Camera : MonoBehaviour
         FindPlayer();
     } 
 
+    private void LateUpdate()
+    {
+        TrackingPlayer();
+    }
+
 
 
     //プレイヤーを探す
