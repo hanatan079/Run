@@ -9,10 +9,14 @@ public class Obstacle : MonoBehaviour
 
     //障害物生成時Y軸管理用
     [SerializeField]
-    private void Obstacle1Pos = -4, Obstacle2pos = -4, Obstacle3Pos = -4, Obstacle4Pos = -4;
+    private float Obstacle1Pos = -4, Obstacle2pos = -4, Obstacle3Pos = -4, Obstacle4Pos = -4;
 
     //スポーン時の数値格納用(ランダムに障害物を発生させる)
     private float minTime = 2f, maxTime = 3.5f;
+
+    //スポーン管理用
+    [SerializeField]
+    private float spawnTime;
 
 
 
