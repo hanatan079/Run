@@ -44,8 +44,12 @@ public class Obstacle : MonoBehaviour
 
 
 
+    void Awake()
+    {
+        //メインカメラ情報取得
+        camera = Camera.main;
+    }
 
-    // Start is called before the first frame update
     void Start()
     {
         
