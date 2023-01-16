@@ -33,9 +33,13 @@ public class Obstacle : MonoBehaviour
     //生成したゲームオブジェクト格納用
     private GameObject newObstacle;
 
-    //生成したゲームオブジェクト格納用
+    //生成したオブジェクト管理用リスト
     [SerializeField]
     private List<GameObject> obstacle1Pool, obstacle2Pool, obstacle3Pool, obstacle4Pool;
+
+    //生成しておくべき数用
+    [SerializeField]
+    private int InstantiateObstacleSpawn =5;
 
 
 
