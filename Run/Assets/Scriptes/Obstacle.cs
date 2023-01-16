@@ -47,7 +47,6 @@ public class Obstacle : MonoBehaviour
     void Awake()
     {
         //メインカメラ情報取得
-        mainCamera = Camera.main;
     }
 
     void Start()
