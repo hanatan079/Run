@@ -27,6 +27,9 @@ public class Obstacle : MonoBehaviour
     //カメラ格納用
     private Camera camera;
 
+    //障害物を生成するべきポジション用
+    private Vector3 obstacle1Pos = Vector3.zero;
+
 
 
 
