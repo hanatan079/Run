@@ -24,6 +24,9 @@ public class Obstacle : MonoBehaviour
     //生成するオブジェクト
     private int obstacleSpawn;
 
+    //カメラ格納用
+    private Camera camera;
+
 
 
 
