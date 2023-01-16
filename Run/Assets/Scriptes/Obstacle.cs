@@ -19,13 +19,13 @@ public class Obstacle : MonoBehaviour
     private float spawnTime;
 
     //障害物の種類を扱う(4種類=4)
-    private int obstacleType = 4;
+    private int obstacleType4 = 4;
 
     //生成するオブジェクト
     private int obstacleSpawn;
 
     //カメラ格納用
-    private Camera camera;
+    private Camera mainCamera;
 
     //障害物を生成するべきポジション用
     private Vector3 obstaclePos = Vector3.zero;
@@ -47,7 +47,7 @@ public class Obstacle : MonoBehaviour
     void Awake()
     {
         //メインカメラ情報取得
-        camera = Camera.main;
+        mainCamera = Camera.main;
     }
 
     void Start()
@@ -59,5 +59,22 @@ public class Obstacle : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+
+    //障害物オブジェクトを作成する
+    void ObstacleGenerate()
+    {
+        for(int i = 0; i < 3; i++)
+        {
+
+        }
+    }
+
+    //オブジェクトを表示させるべき場所へ表示させる
+    void DisplayObstacle(int Obstacle)
+    {
+
     }
 }
