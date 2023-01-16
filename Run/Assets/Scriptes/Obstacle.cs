@@ -18,6 +18,9 @@ public class Obstacle : MonoBehaviour
     [SerializeField]
     private float spawnTime;
 
+    //障害物の種類を扱う(4種類=4)
+    private int ObstacleType = 4;
+
 
 
 
