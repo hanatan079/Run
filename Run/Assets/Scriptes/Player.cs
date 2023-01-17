@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         rd = GetComponent<Rigidbody2D>();
 
         //子オブジェクトにしたFloorContactを取得
-        //floorContactPos = transform.GetChild(0).transform;
+        floorContactPos = transform.GetChild(0).transform;
 
         //AnimationPlayer
         animationPlayer = GetComponent<AnimationPlayer>();
