@@ -46,6 +46,8 @@ public class ObstacleGeneration : MonoBehaviour
 
     void Awake()
     {
+        mainCamera = Camera.main;
+
         //メインカメラ情報取得
     }
 
@@ -63,7 +65,7 @@ public class ObstacleGeneration : MonoBehaviour
 
 
     //障害物オブジェクトを作成する
-    void ObstacleGenerate()
+    void GenerateObstacle()
     {
         for(int i = 0; i < 3; i++)
         {
