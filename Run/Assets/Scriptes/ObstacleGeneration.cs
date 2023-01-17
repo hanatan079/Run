@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class ObstacleGeneration : MonoBehaviour
 {
     //障害物格納用
     private GameObject obstacle1, obstacle2, obstacle3, obstacle4;
