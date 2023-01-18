@@ -142,6 +142,8 @@ public class ObstacleGeneration : MonoBehaviour
     {
         if(Time.time > spawnTime)
         {
+            DisplayPosObstacle();
+            
             spawnTime = Time.time + Random.Range(minTime, maxTime);
         }
     }
