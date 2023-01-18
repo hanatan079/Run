@@ -60,7 +60,7 @@ public class ObstacleGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        DisplayObstacle();
     }
 
 
@@ -143,7 +143,7 @@ public class ObstacleGeneration : MonoBehaviour
         if(Time.time > spawnTime)
         {
             DisplayPosObstacle();
-            
+
             spawnTime = Time.time + Random.Range(minTime, maxTime);
         }
     }
