@@ -67,9 +67,9 @@ public class ObstacleGeneration : MonoBehaviour
     //障害物オブジェクトを作成する
     void GenerateObstacle()
     {
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < 4; i++)
         {
-
+            DisplayObstacle(i);
         }
     }
 
