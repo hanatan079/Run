@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObstacleGeneration : MonoBehaviour
 {
     //障害物格納用
+    [SerializeField]
     private GameObject obstacle1, obstacle2, obstacle3, obstacle4;
 
     //障害物生成時Y軸管理用
@@ -104,7 +105,6 @@ public class ObstacleGeneration : MonoBehaviour
 
                 newObstacle.SetActive(false);
             }
-            
             break;
 
             case 2:
@@ -118,7 +118,6 @@ public class ObstacleGeneration : MonoBehaviour
 
                 newObstacle.SetActive(false);
             }
-
             break;
 
             case 3:
