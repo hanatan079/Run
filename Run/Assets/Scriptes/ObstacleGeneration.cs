@@ -48,6 +48,8 @@ public class ObstacleGeneration : MonoBehaviour
     {
         mainCamera = Camera.main;
 
+        GenerateObstacle();
+
         //メインカメラ情報取得
     }
 
