@@ -74,8 +74,68 @@ public class ObstacleGeneration : MonoBehaviour
     }
 
     //オブジェクトを表示させるべき場所へ表示させる
-    void DisplayObstacle(int Obstacle)
+    void DisplayObstacle(int obstaclelAmount)
     {
+        switch(obstaclelAmount)
+        {
+            case 0:
+            for(int i = 0; i < InstantiateObstacleSpawn; i++)
+            {
+                newObstacle = Instantiate(obstacle1);
 
+                newObstacle.transform.SetParent(transform);
+
+                obstacle1Pool.Add(newObstacle);
+
+                newObstacle.SetActive(false);
+            }
+
+            break;
+
+            case 1:
+            for(int i = 0; i < InstantiateObstacleSpawn; i++)
+            {
+                newObstacle = Instantiate(obstacle2);
+
+                newObstacle.transform.SetParent(transform);
+
+                obstacle2Pool.Add(newObstacle);
+
+                newObstacle.SetActive(false);
+            }
+            
+            break;
+
+            case 2:
+            for(int i = 0; i < InstantiateObstacleSpawn; i++)
+            {
+                newObstacle = Instantiate(obstacle3);
+
+                newObstacle.transform.SetParent(transform);
+
+                obstacle3Pool.Add(newObstacle);
+
+                newObstacle.SetActive(false);
+            }
+
+            break;
+
+            case 3:
+            for(int i = 0; i < InstantiateObstacleSpawn; i++)
+            {
+                newObstacle = Instantiate(obstacle4);
+
+                newObstacle.transform.SetParent(transform);
+
+                obstacle4Pool.Add(newObstacle);
+
+                newObstacle.SetActive(false);
+            }
+
+            break;
+
+
+
+        }
     }
 }
