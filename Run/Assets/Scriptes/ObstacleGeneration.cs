@@ -50,8 +50,6 @@ public class ObstacleGeneration : MonoBehaviour
         mainCamera = Camera.main;
 
         RepeatObstacle();
-
-        //メインカメラ情報取得
     }
 
     void Start()
@@ -67,7 +65,7 @@ public class ObstacleGeneration : MonoBehaviour
 
 
 
-    //障害物を数回生成する
+    //障害物を複数回生成する
     void RepeatObstacle()
     {
         for(int i = 0; i < 4; i++)
@@ -137,5 +135,92 @@ public class ObstacleGeneration : MonoBehaviour
 
             break;
         }
+    }
+
+    //表示したい場所へ表示させる
+    void DisplayObstacle()
+    {
+        if(Time.time > spawnTime)
+        {
+            spawnTime = Time.time + Random.Range(minTime, maxTime);
+        }
+    }
+
+    //表示したい場所へ表示させる(ポジ指定)
+    void DisplayPosObstacle()
+    {
+        obstacleSpawn = Random.Range(0, obstacleType4);
+
+        obstaclePos.x = mainCamera.transform.position.x + 20f;
+
+        switch(obstacleSpawn)
+        {
+            case 0:
+            for(int i = 0; i < obstacle1Pool.Count; i++)
+            {
+                if(!obstacle1Pool[i].activeInHierarchy)
+                {
+                    obstacle1Pool[i].SetActive(true);
+
+                    obstaclePos.y = obstacle1Pos;
+
+                    newObstacle = obstacle1Pool[i];
+
+                    break;
+                }
+            }
+            break;
+
+            case 1:
+            for(int i = 0; i < obstacle2Pool.Count; i++)
+            {
+                if(!obstacle2Pool[i].activeInHierarchy)
+                {
+                    obstacle2Pool[i].SetActive(true);
+
+                    obstaclePos.y = obstacle1Pos;
+
+                    newObstacle = obstacle2Pool[i];
+
+                    break;
+                }
+            }
+            break;
+
+            case 2:
+            for(int i = 0; i < obstacle3Pool.Count; i++)
+            {
+                if(!obstacle3Pool[i].activeInHierarchy)
+                {
+                    obstacle3Pool[i].SetActive(true);
+
+                    obstaclePos.y = obstacle3Pos;
+
+                    newObstacle = obstacle3Pool[i];
+
+                    break;
+                }
+            }
+            break;
+
+            case 3:
+            for(int i = 0; i < obstacle4Pool.Count; i++)
+            {
+                if(!obstacle4Pool[i].activeInHierarchy)
+                {
+                    obstacle4Pool[i].SetActive(true);
+
+                    obstaclePos.y = obstacle4Pos;
+
+                    newObstacle = obstacle4Pool[i];
+
+                    break;
+                }
+            }
+            break;
+
+            newObstacle.transform.position = obstaclePos;
+        }
+
     }
 }
