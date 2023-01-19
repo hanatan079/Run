@@ -10,7 +10,7 @@ public class ObstacleGeneration : MonoBehaviour
 
     //障害物生成時Y軸管理用
     [SerializeField]
-    private float obstacle1Pos = -4, obstacle2pos = -4, obstacle3Pos = -4, obstacle4Pos = -4;
+    private float obstacle1Pos = -4f, obstacle2pos = -4f, obstacle3Pos = -4f, obstacle4Pos = -4;
 
     //スポーン時の数値格納用(ランダムに障害物を発生させる)
     private float minTime = 2f, maxTime = 3.5f;
@@ -141,9 +141,10 @@ public class ObstacleGeneration : MonoBehaviour
     {
         if(Time.time > spawnTime)
         {
+            spawnTime = Time.time + Random.Range(minTime, maxTime);
+
             DisplayPosObstacle();
 
-            spawnTime = Time.time + Random.Range(minTime, maxTime);
         }
     }
 
@@ -219,9 +220,8 @@ public class ObstacleGeneration : MonoBehaviour
                 }
             }
             break;
-
-            newObstacle.transform.position = obstaclePos;
         }
+            newObstacle.transform.position = obstaclePos;
 
     }
 }
