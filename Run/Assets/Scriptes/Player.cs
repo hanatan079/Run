@@ -67,6 +67,9 @@ public class Player : MonoBehaviour
         {
             if(Landing())
             {
+                //SE
+                SoundSE.single.StartSE(1);
+
                 //力を加える
                 rd.AddForce(new Vector2(0f, jumpPower),ForceMode2D.Impulse);
             }

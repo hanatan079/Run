@@ -26,13 +26,10 @@ public class SoundSE : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    //SE再生(1.衝突音　2.ジャンプ)
-    public void startSE(int i)
+    //SE再生(0.衝突音 1.ジャンプ)
+    public void StartSE(int x)
     {
-        se[i].Stop();
-        se[i].Play();
+        se[x].Stop();
+        se[x].Play();
     }
-
-
-
 }

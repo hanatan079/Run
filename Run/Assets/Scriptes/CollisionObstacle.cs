@@ -12,10 +12,12 @@ public class CollisionObstacle : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            //SE
+            SoundSE.single.StartSE(0);
+
             Time.timeScale = 0f;
 
             SceneManager.LoadScene("GameOverScene");
-
         }
     }
 }
