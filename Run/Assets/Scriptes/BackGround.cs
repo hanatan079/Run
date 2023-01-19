@@ -16,10 +16,6 @@ public class BackGround : MonoBehaviour
     //生成したオブジェクトを管理
     private List<GameObject> floorPool = new List<GameObject>();
 
-    //生成する位置の調整用
-    [SerializeField]
-    private float floorPos = 0f;
-
     //生成する幅の調整用
     [SerializeField]
     private float floorWidth = 18f;
@@ -99,7 +95,7 @@ public class BackGround : MonoBehaviour
     void RedisplayGround()
     {
         //生成するべきポジションを格納する変数作成
-        Vector3 newFloorPos = Vector3.zero;
+        Vector3 newFloorPos = new Vector3(floorDisplay, -4.7f, 0f);
 
         //リストの中の非表示の床を設定するべきポジションへ表示する
         foreach (GameObject obj in floorPool)
@@ -108,7 +104,7 @@ public class BackGround : MonoBehaviour
             if(!obj.activeInHierarchy)
             {
                 //表示するべき場所へ表示する
-                newFloorPos = new Vector3(floorDisplay, floorPos, 0f);
+                newFloorPos = new Vector3(floorDisplay, -4.7f, 0f);
 
                 //リストが次に表示されるべき場所へ移動する
                 obj.transform.position = newFloorPos;
