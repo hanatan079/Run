@@ -13,15 +13,13 @@ public class GameOver : MonoBehaviour
     {
         gameOverCanvas = GetComponent<Canvas>();
     }
-    // Start is called before the first frame update
-    void Start()
+
+
+
+    //パネルを開く
+    public static void GameOverOpenPanel()
     {
-        
+        Time.timeScale = 0f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
