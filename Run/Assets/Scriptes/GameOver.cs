@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameOver : MonoBehaviour
 {
@@ -14,12 +16,11 @@ public class GameOver : MonoBehaviour
         gameOverCanvas = GetComponent<Canvas>();
     }
 
-
-
-    //パネルを開く
-    public static void GameOverOpenPanel()
+    //リスタート
+    public void  RePlay()
     {
-        Time.timeScale = 0f;
-    }
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("GameOverScene");
 
+    }
 }
