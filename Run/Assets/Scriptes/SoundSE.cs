@@ -6,9 +6,24 @@ public class SoundSE : MonoBehaviour
 {
 
     //シングルトン化
-    public static SounndSE single;
+    public static SoundSE single;
 
-    
+
+
+
+    //SE再生
+    private void Awake()
+    {
+        if(single == null)
+        {
+            single = this;
+        }
+        else if(single != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
