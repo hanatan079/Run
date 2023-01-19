@@ -17,7 +17,7 @@ public class GameOver : MonoBehaviour
     }
 
     //リスタート
-    public void  RePlay()
+    public static void RePlay()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("GameOverScene");

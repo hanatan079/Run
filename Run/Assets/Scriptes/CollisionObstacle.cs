@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CollisionObstacle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    //衝突の検知
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.CompareTag("Player"))
+        {
+            Time.timeScale = 0f;
+
+            GameOver.RePlay();
+        }
     }
 }
