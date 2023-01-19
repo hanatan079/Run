@@ -13,7 +13,7 @@ public class ObstacleGeneration : MonoBehaviour
     private float obstacle1Pos = -4f, obstacle2pos = -4f, obstacle3Pos = -4f, obstacle4Pos = -4;
 
     //スポーン時の数値格納用(ランダムに障害物を発生させる)
-    private float minTime = 1.2f, maxTime = 3f;
+    private float minTime = 0.5f, maxTime = 3f;
 
     //スポーン管理用
     [SerializeField]
