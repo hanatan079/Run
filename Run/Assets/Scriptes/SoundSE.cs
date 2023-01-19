@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class SoundSE : MonoBehaviour
 {
+
+    //シングルトン化
+    public static SounndSE single;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
