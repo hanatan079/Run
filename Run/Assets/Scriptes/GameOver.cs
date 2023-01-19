@@ -5,8 +5,14 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
     //キャンバス
-    private Static Canvas gameOverCanvas;
+    private static Canvas gameOverCanvas;
 
+
+
+    void Awake()
+    {
+        gameOverCanvas = GetComponent<Canvas>();
+    }
     // Start is called before the first frame update
     void Start()
     {
