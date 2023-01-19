@@ -9,12 +9,10 @@ public class SoundSE : MonoBehaviour
     public static SoundSE single;
 
     //SE格納
-    public SE[] se;
+    public AudioSource[] se;
 
 
-
-
-    //SE再生
+    //singleをからにする
     private void Awake()
     {
         if(single == null)
@@ -27,5 +25,14 @@ public class SoundSE : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+
+    //SE再生(1.衝突音　2.ジャンプ)
+    public void startSE(int i)
+    {
+        se[i].Stop();
+        se[i].Play();
+    }
+
+
 
 }
